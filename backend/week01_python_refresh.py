@@ -54,19 +54,21 @@ def can_enroll(student_id, course_code):
 print(can_enroll("22000002", "INT2204"))
 
 def search_courses(keyword):
- normalized = keyword.strip().lower()
- results = []
- 
- for course in courses:
-  code = course["code"].lower()
-  name = course["name"].lower()
-  
-  if normalized in code or normalized in name:
-    results.append(course)
- 
- return results
+    normalized = keyword.strip().lower()
+    results = []
+
+    for course in courses:
+        code = course["code"].lower()
+        name = course["name"].lower()
+
+        if normalized in code or normalized in name:
+            results.append(course)
+
+    return results
+
 
 print(search_courses("web"))
+
 
 def enroll_student(student_id, course_code):
     student_exists = any(
